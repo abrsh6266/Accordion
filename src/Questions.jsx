@@ -1,11 +1,18 @@
 import React from "react";
 import { SingleQuestion } from "./SingleQuestion";
-export function Questions({ questions }) {
+export function Questions({ questions,activeId,toggleQuestion }) {
   return (
     <section className="container">
       <h1>Questions</h1>
       {questions.map((question) => {
-        return <SingleQuestion {...question} key={question.id} />;
+        return (
+          <SingleQuestion
+            {...question}
+            key={question.id}
+            activeId={activeId}
+            toggleQuestion={toggleQuestion}
+          />
+        );
       })}
     </section>
   );
